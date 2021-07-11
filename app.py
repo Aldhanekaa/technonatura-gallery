@@ -8,7 +8,6 @@ config = dict(dotenv_values('.env'))
 
 MONGO_URI: str = ""
 
-
 try:
     MONGO_URI = os.environ["MONGO_URI"]
 except:
@@ -65,9 +64,6 @@ for markdown in static_markdowns:
             @app.route(f"/{file_name.lower()}")
             def privacy_policy():
                 return render_template('static_page.html', title=file_name.replace('-', ' '), content=contents)
-
-
-
 
 if __name__ == "__main__":  
     app.run(debug=True)
