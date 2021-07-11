@@ -67,3 +67,4 @@ for markdown in static_markdowns:
 
 if __name__ == "__main__":  
     app.run(debug=True)
+    print("DEBUG MODE")
