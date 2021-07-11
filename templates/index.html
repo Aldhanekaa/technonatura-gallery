@@ -1,0 +1,89 @@
+{% extends "base.html" %} {% block metatags %}
+<title>TechnoNatura Gallery Feature</title>
+
+{% endblock %} {% block content %}
+<div
+  class="modal fade"
+  id="whyWeMadeThis"
+  aria-hidden="true"
+  aria-labelledby="exampleModalToggleLabel"
+  tabindex="-1"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalToggleLabel">
+          Why we made this feature?
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        In order for us to make AI and Machine Learning face recognition we need
+        some student faces, and also if you are interested to try the API for
+        your project yes you can use that but under
+        <a href="/api-terms" target="_blank">the API Terms</a>. Greatly thanks,
+        Aldhan.
+      </div>
+      <div class="modal-footer"></div>
+    </div>
+  </div>
+</div>
+
+{% include "navbar.html" %}
+
+<div class="container">
+  <div class="p-5 mb-4 bg-light rounded-3">
+    <div class="container-fluid py-5">
+      <h1 class="display-5 fw-bold">
+        Introducing TechnoNatura Gallery Feature
+      </h1>
+      <p class="col-md-8 fs-4">Upload collection of your self photos.</p>
+      <button class="btn btn-primary btn-lg" type="button">
+        Start Uploading
+      </button>
+      <div
+        class="btn text-muted pointer"
+        data-bs-toggle="modal"
+        href="#whyWeMadeThis"
+        role="button"
+      >
+        Why we made this?
+      </div>
+    </div>
+  </div>
+
+  <div class="row align-items-md-stretch">
+    <div class="col-md-6">
+      <div class="h-100 p-5 text-white bg-dark rounded-3">
+        <h2>Try The API</h2>
+        <p>Try our API to get free photos of students.</p>
+        <button class="btn btn-outline-light" type="button">GraphQL API</button>
+        <button class="btn btn-outline-light" type="button">REST API</button>
+        <p class="mb-1 mt-3 text-muted">
+          *Only user with
+          <a href="https://technonatura.vercel.app/developer-program"
+            >Developer Program</a
+          >
+          can use this API, please refer to this
+          <a href="/api-terms" target="_blank">API Terms</a>
+        </p>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="h-100 p-5 bg-light border rounded-3">
+        <h2>Secure (Insya Allah)</h2>
+        <p>
+          May Allah keeps prevent evil attempt from user by accessing the API
+        </p>
+      </div>
+    </div>
+  </div>
+
+  {% include "footer.html" %}
+</div>
+{% endblock %}

@@ -1,0 +1,114 @@
+{% extends "base.html" %} {% block metatags %}
+<title>TechnoNatura Gallery Feature</title>
+
+{% endblock %} {% block content %}
+<div class="container">
+  <header
+    class="
+      d-flex
+      flex-wrap
+      align-items-center
+      justify-content-center justify-content-md-between
+      py-3
+      mb-4
+      border-bottom
+    "
+  >
+    <a
+      href="/"
+      class="
+        d-flex
+        align-items-center
+        col-md-3
+        mb-2 mb-md-0
+        text-dark text-decoration-none
+      "
+    >
+      TechnoNatura Gallery
+    </a>
+
+    <div class="col-md-3 text-end">
+      <button type="button" class="btn btn-outline-primary me-2">Login</button>
+    </div>
+  </header>
+</div>
+
+<main id="main" class="site-main main">
+  <section class="section">
+    <div class="container">
+      <div class="row">
+        <div id="primary" class="content-area col-md-11 mx-auto">
+          <div id="content" class="site-content" role="main">
+            <article
+              id="post-108"
+              class="post-108 page type-page status-publish hentry"
+            >
+              <header class="entry-header">
+                <h1 class="entry-title">{{title}}</h1>
+              </header>
+              <!-- .entry-header -->
+
+              <div class="entry-content" id="htmlMarkdownContent">
+                <div
+                  v-if="!htmlMarkdownContent"
+                  class="spinner-border text-primary"
+                  role="status"
+                >
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+              </div>
+              <!-- .entry-content -->
+            </article>
+            <!-- #post-108 -->
+          </div>
+          <!-- #content .site-content -->
+        </div>
+        <!-- #primary .content-area -->
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="container">{% include "footer.html" %}</div>
+
+<script src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
+<script src="https://unpkg.com/vue@next"></script>
+
+{% if content %}
+<input id="markdownContent" type="hidden" value="{{content}}" />
+
+{% else %}
+<h1>Hello, World!</h1>
+{% endif %}
+
+<script>
+  const App = {
+    data() {
+      return {
+        message: 'Hello Vue.js!',
+        htmlMarkdownContent: undefined,
+      };
+    },
+    mounted() {
+      var converter = new showdown.Converter(),
+        text = markdownContent.value,
+        html = converter.makeHtml(text);
+      //   console.log();
+
+      this.htmlMarkdownContent = html;
+    },
+    watch: {
+      htmlMarkdownContent: function (newValue, oldValue) {
+        // here you can do whatever you want
+        if (typeof newValue == 'string') {
+          console.log(document.getElementById('htmlMarkdownContent'));
+          document.getElementById('htmlMarkdownContent').innerHTML = newValue;
+        }
+      },
+    },
+  };
+
+  Vue.createApp(App).mount('#main');
+</script>
+
+{% endblock %}

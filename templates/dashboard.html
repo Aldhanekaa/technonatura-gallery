@@ -1,0 +1,57 @@
+{% extends "dashboardBase.html" %} {% block metatags %}
+<title>hey</title>
+{% endblock %} {% block content %}
+<div
+  class="
+    d-flex
+    justify-content-between
+    flex-wrap flex-md-nowrap
+    align-items-center
+    pt-3
+    pb-2
+    mb-3
+    border-bottom
+  "
+>
+  <h1 class="h2">TechnoNatura Gallery Dashboard</h1>
+  <div class="btn-toolbar mb-2 mb-md-0">
+    <button type="button" class="btn btn-sm btn-outline-secondary">
+      <svg
+        viewBox="0 0 24 24"
+        width="20"
+        height="20"
+        stroke="currentColor"
+        stroke-width="2"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="css-i6dzq1"
+      >
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+        <polyline points="7 10 12 15 17 10"></polyline>
+        <line x1="12" y1="15" x2="12" y2="3"></line>
+      </svg>
+      Upload Photos
+    </button>
+  </div>
+</div>
+
+<div id="basicExample" class="justified-gallery">
+  <a href="https://farm4.staticflickr.com/3894/15008518202_c265dfa55f_h.jpg">
+    <img
+      alt="caption for image 1"
+      src="https://farm4.staticflickr.com/3894/15008518202_c265dfa55f_h.jpg"
+    />
+  </a>
+  <a
+    href="https://farm6.staticflickr.com/5591/15008867125_b61960af01_h.jpg"
+    title="Just in a dream Place"
+  >
+    <img
+      alt="caption for image 2"
+      src="https://farm6.staticflickr.com/5591/15008867125_b61960af01_h.jpg"
+    />
+  </a>
+</div>
+
+{% endblock %}
